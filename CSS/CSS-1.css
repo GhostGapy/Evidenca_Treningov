@@ -1,0 +1,92 @@
+#topbar{
+    font-family: sans-serif;
+    text-align: center;
+    opacity: 0.5;
+    position: relative;
+}
+
+#logo1top{
+    top: 20px;
+    left: 200px;
+    position: absolute;
+}
+
+#loggedbartext{
+    top: 45px;
+    right: 300px;
+    position: absolute;
+    font-size: 20px;
+}
+
+#loginButton{
+    top: 40px;
+    right: 200px;
+    position: absolute;
+    font-size: 20px;
+}
+
+.loginbtn{
+    display: inline-block;
+    background-color: #1b1b1b;
+    color: #ffffff;
+    padding: 7px 13px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+
+.logoutbtn{
+    display: inline-block;
+    background-color: #f44336;
+    color: #000000;
+    padding: 7px 13px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.loginbtn:hover{
+    background-color: #7a7a7a;
+}
+
+.logoutbtn:hover{
+    background-color: #8b1d1d;
+}
+
+#logoutButton{
+    top: 38px;
+    right: 170px;
+    position: absolute;
+    font-size: 20px;
+}
+
+#indexdiv{
+    font-family: sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+body {
+    background-image: url("Slike/index1.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 1800px;
+    background-position-x: center;
+    background-position-y: 220px;
+}
+
+#inlineblock{
+    display: inline-block;
+    width: 1840px;
+    height: 1300px;
+    padding: 5px;    
+    background-color: rgb(10, 10, 10); 
+}
+
+#indeximg2{
+    position: relative;
+}
