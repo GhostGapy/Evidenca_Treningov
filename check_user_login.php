@@ -16,8 +16,9 @@
             $email=$_POST['email'];
             $pass=$_POST['pass'];
 
+            $pass1 = md5($pass);
 
-            $sql="SELECT * FROM users WHERE mail='$email' AND password='$pass'";
+            $sql="SELECT * FROM users WHERE mail='$email' AND password='$pass1'";
 
             $result=mysqli_query($link, $sql);
 
@@ -34,7 +35,10 @@
             }
             else
             {
-                header("location:login.php");
+                echo "  <script type='text/JavaScript'> 
+                            alert('Napačno geslo ali email !!!');
+                            window.location.href='login.php';
+                        </script>";
             }
         }
     ?>
