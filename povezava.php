@@ -2,7 +2,7 @@
     $host="localhost";
     $user="root";
     $password="";
-    $database="test";
+    $database="test2";
 
     //Povezava na strežnik 
     /*$link=mysqli_connect($host, $user, $password) or 

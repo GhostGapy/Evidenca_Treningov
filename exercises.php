@@ -4,6 +4,7 @@
 ?>
 <html>
     <head>   
+        <title>Planer</title>
         <meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
         <link href="CSS/CSS_calendar.css" type="text/css" rel="stylesheet" />
     </head>
@@ -14,7 +15,6 @@
             $calendar = new Calendar();
             
             echo $calendar->show();
-            echo "Hello";
         ?>
     </body>
 </html> 
