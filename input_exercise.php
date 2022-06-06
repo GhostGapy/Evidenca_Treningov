@@ -25,6 +25,9 @@
             echo $place;
             echo $diff;
             echo $opis;
+            $userID=$_SESSION['id'];
+            echo $userID;
+
             
             $sql1="SELECT * FROM treningi WHERE datum='$date'";
 
@@ -41,7 +44,7 @@
             }
             else
             {
-                $sql2 = "INSERT INTO treningi () VALUES (NULL, '$exeName', '$date', '$opis', (SELECT id FROM kraji_treningov WHERE ime='$place'), '$diff')"; //zapisovanje uporabnikov v tabelo
+                $sql2 = "INSERT INTO treningi () VALUES (NULL, '$exeName', '$date', '$opis', '$diff', (SELECT id FROM kraji_treningov WHERE ime='$place'), '$userID')"; 
                 
                 mysqli_query($link, $sql2);
                 header("Location:exercises.php");

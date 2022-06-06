@@ -12,7 +12,7 @@
         <div id="redline"></div>
         <div id=loginBox>
             <form id="formLogin" action="input_exercise.php" method="get">
-                <input id="ime" type="text" name="ime" placeholder="Name the exercise" required>
+                <input id="ime" type="text" name="ime" placeholder="Name the exercise" maxlength="24" required>
                 <div id="datetext">exercise date</div><input id="datum" type="date" name="datum" value="<?php echo $date ?>" required>
                 <div id="datetext">exercise place</div>
                 <div id="place"><select name="place" required>
