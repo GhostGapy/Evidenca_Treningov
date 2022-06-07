@@ -25,9 +25,7 @@
             $_SESSION['chosenName']=$row['name'];
             $_SESSION['chosenSurname']=$row['surname'];   
             
-            echo "  <script type='text/JavaScript'> 
-                        window.location.href='exercises_admin.php';
-                    </script>";
+            header("Location:exercises_admin.php");
         }
 
         

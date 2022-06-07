@@ -134,3 +134,18 @@ div#calendar{
     border-radius: 5px;
 }
 
+#back{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 0.5rem;
+    height: 0.0.5rem;
+}
+
+#belong{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+

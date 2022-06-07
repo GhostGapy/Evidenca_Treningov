@@ -16,7 +16,7 @@
                         </script>";
         }
         ?>
-        
+        <div id="back"><a href="index.php"><img src="Slike/back.png" width="50" height="50" alt="No image"></a></div>
         <?php  
             require_once 'povezava.php'; 
 
