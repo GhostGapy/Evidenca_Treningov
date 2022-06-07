@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <?php session_start(); ?>
+=======
+>>>>>>> 4c46e96ecc98a115bd871fd4e12d40564379661d
 <html>
     <head>   
         <title>Planer</title>

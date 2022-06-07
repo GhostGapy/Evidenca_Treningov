@@ -24,12 +24,16 @@
             echo $place;
             echo $diff;
             echo $opis;
+<<<<<<< HEAD
             if ($_SESSION['admin']==1) {
                 $userID=$_SESSION['userID'];
             }
             else {
                 $userID=$_SESSION['id'];
             }
+=======
+            $userID=$_SESSION['id'];
+>>>>>>> 4c46e96ecc98a115bd871fd4e12d40564379661d
             echo $userID;
 
             

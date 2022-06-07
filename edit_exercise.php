@@ -3,6 +3,7 @@
     require_once 'povezava.php'; 
 
     $ID=$_GET['msg'];
+<<<<<<< HEAD
     $sql="SELECT * FROM treningi WHERE id='$ID';";
 
     $result=mysqli_query($link, $sql);
@@ -167,3 +168,10 @@
         <?php include_once('footer.php'); ?>
     </body>
 </html> 
+=======
+    echo $ID;
+    //$sql="DELETE FROM treningi WHERE ";
+
+    //$result=mysqli_query($link, $sql);
+?>
+>>>>>>> 4c46e96ecc98a115bd871fd4e12d40564379661d
