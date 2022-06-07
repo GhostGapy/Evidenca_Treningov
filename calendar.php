@@ -131,11 +131,7 @@ class Calendar {
             return '<spam><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
                 ($cellContent==null?'mask':'').'">'.$cellContent.'</li></spam>';
         }
-<<<<<<< HEAD
         else if(isset($_SESSION['id']) && $_SESSION['admin']==0)
-=======
-        else if(isset($_SESSION['id']))
->>>>>>> 4c46e96ecc98a115bd871fd4e12d40564379661d
         {
             require 'povezava.php'; 
             $date = $this->currentDate." 00:00:00";
@@ -159,7 +155,6 @@ class Calendar {
                 ($cellContent==null?'mask':'').'"><spam id="cellC">'.$cellContent.'</spam><br><spam>'.'</spam></li></a></spam>';
             }
         }
-<<<<<<< HEAD
         else if ($_SESSION['admin']==1) 
         {
             require 'povezava.php'; 
@@ -185,8 +180,6 @@ class Calendar {
                 ($cellContent==null?'mask':'').'"><spam id="cellC">'.$cellContent.'</spam><br><spam>'.'</spam></li></a></spam>';
             }
         }
-=======
->>>>>>> 4c46e96ecc98a115bd871fd4e12d40564379661d
         else
         {
             return '<spam id="hover"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).

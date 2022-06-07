@@ -4,7 +4,6 @@
     require 'povezava.php'; 
     $currentDate = $_GET['msg'];
     $date = $currentDate." 00:00:00";
-<<<<<<< HEAD
 
     if ($_SESSION['admin']==1) {
         $userID=$_SESSION['userID'];
@@ -14,9 +13,6 @@
     }
 
     $sql="SELECT * FROM treningi WHERE users_id=".$userID." AND datum='".$date."';";
-=======
-    $sql="SELECT * FROM treningi WHERE users_id=".$_SESSION['id']." AND datum='".$date."';";
->>>>>>> 4c46e96ecc98a115bd871fd4e12d40564379661d
 
     $result=mysqli_query($link, $sql);
 
@@ -82,7 +78,6 @@
             <div id="label">who did the exercise</div>
             <div><?php echo $name." ".$surname; ?></div>
 
-<<<<<<< HEAD
             <div id="label">difficulty of the exercise</div>
             <div id="diff">Difficulty Level: <?php echo $diff; ?></div>
 
@@ -100,16 +95,5 @@
             ?>
         </div>
         <?php include_once('footer.php'); ?>
-=======
-            <div id="label">Difficulty of the exercise</div>
-            <div id="diff">Difficulty Level: <?php echo $diff; ?></div>
-
-            <div id="label1">Description of the exercise</div>
-            <div id="opis"><?php echo $opis; ?></div>
-            <div id="btnInputDiv"><a id="deleteInput" href="delete_exercise.php?msg=<?php echo $ID ?>">Delete</a><a id="editInput" href="exercises.php">Edit</a></div>
-            
-            <div id="btnInputDiv"><a id="cancelInput" href="exercises.php">Cancel</a></div>
-        </div>
->>>>>>> 4c46e96ecc98a115bd871fd4e12d40564379661d
     </body>
 </html> 
