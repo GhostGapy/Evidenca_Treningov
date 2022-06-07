@@ -21,5 +21,6 @@
         <div id="haveacc">Already have an account?</div>
         <div><a id="loginbtn" href="login.php">Back to Login</a></div>
     </div>
+    <?php include_once('footer.php'); ?>
 </body>
 </html>

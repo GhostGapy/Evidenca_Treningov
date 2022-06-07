@@ -31,6 +31,7 @@
                 $_SESSION['id']=$row['id'];
                 $_SESSION['name']=$row['name'];
                 $_SESSION['surname']=$row['surname'];
+                $_SESSION['admin']=$row['admin'];
                 header("location:index.php");
             }
             else

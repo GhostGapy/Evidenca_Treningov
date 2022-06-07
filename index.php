@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Better Fitness</title>
     <link rel="stylesheet" href="CSS/CSS_index-1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--<link rel="stylesheet" href="CSS/textboxes.css">-->
 </head>
 <body>
@@ -21,7 +22,7 @@
         {
             echo ("<div id='loggedbartext'>Logged in as: ".$_SESSION['name']." ".$_SESSION['surname']." &nbsp; <a class='logoutbtn' href='logout.php'>LOGOUT</a></div>");
         }
-    ?><!--Top bar-->
+    ?><!--Top bar--></div>
     <div id="logo1top">
         <a href="index.php"><img id="logo1" src="Slike/fitnessLogo.png" alt="No image to load" width="100" height="75"></a>
     </div>
@@ -45,6 +46,20 @@
             Načrte vadbe lahko shranite v svoj račun.
         </div>
     </div>
-    <div id="redline"></div>
+        
+    <?php
+        if(!isset($_SESSION['name']))
+        {
+            echo ("<div id='calendar'><a href='exercises.php' id='calendarlink_en'>OPEN CALENDAR</a></div>");
+        }
+        else
+        {
+            echo ("<div id='calendar'><a href='exercises.php' id='calendarlink_dis'>OPEN CALENDAR</a></div>");
+        }
+    ?>
+    
+
+    <?php include_once('footer.php'); ?>
+
 </body>
 </html>

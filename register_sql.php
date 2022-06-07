@@ -24,7 +24,7 @@
 
             $result=mysqli_query($link, $sql1);
 
-            $kolk=mysqli_num_rows($result);
+            $kolk=mysqli_num_rows($result); 
 
             
             if($kolk==1)
@@ -36,7 +36,7 @@
             }
             else
             {
-                $sql2 = "INSERT INTO users () VALUES (NULL, '$name', '$surname', '$email', '$pass1')"; //zapisovanje uporabnikov v tabelo
+                $sql2 = "INSERT INTO users () VALUES (NULL, '$name', '$surname', '$email', '$pass1', 0)"; //zapisovanje uporabnikov v tabelo
                 
                 mysqli_query($link, $sql2);
                 header("Location:login.php");

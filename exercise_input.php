@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $date=$_GET['msg'];
 ?>
 
@@ -12,7 +13,7 @@
         <div id="redline"></div>
         <div id=loginBox>
             <form id="formLogin" action="input_exercise.php" method="get">
-                <input id="ime" type="text" name="ime" placeholder="Name the exercise" required>
+                <input id="ime" type="text" name="ime" placeholder="Name the exercise" maxlength="24" required>
                 <div id="datetext">exercise date</div><input id="datum" type="date" name="datum" value="<?php echo $date ?>" required>
                 <div id="datetext">exercise place</div>
                 <div id="place"><select name="place" required>
@@ -49,7 +50,15 @@
                 </div>
                 <div><input id="resetbtn" type="reset" value="Reset"><input id="savebtn" type="submit" name="sub" value="Save"></div>
             </form>
-            <div id="cancelInputDiv"><a id="cancelInput" href="exercises.php">Cancel</a></div>
+            <?php
+                if ($_SESSION['admin']==1) {
+                    echo "<div id='btnInputDiv'><a id='cancelInput' href='exercises_admin.php'>Cancel</a></div>";
+                }
+                else {
+                    echo "<div id='btnInputDiv'><a id='cancelInput' href='exercises.php'>Cancel</a></div>";
+                }
+            ?>
         </div>
+        <?php include_once('footer.php'); ?>
     </body>
 </html> 

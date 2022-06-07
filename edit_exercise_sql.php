@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html lang='sl'>
 <head>
+    <title>SQL</title>
 </head>
 <body>
     <?php
@@ -31,23 +32,29 @@
                 $userID=$_SESSION['id'];
             }
             echo $userID;
-
             
-            $sql1="SELECT * FROM treningi WHERE datum='$date' AND users_id='".$userID."'";
+            $sql1="SELECT * FROM treningi WHERE users_id=".$userID." AND datum='".$date."';";
 
             $result=mysqli_query($link, $sql1);
 
             $kolk=mysqli_num_rows($result);
+
+            $row=mysqli_fetch_array($result);
             
             if($kolk==1)
             {
-                
-            }
-            else
-            {
+                $treningID=$row['id'];
+                echo $treningID;
                 $sql2 = "INSERT INTO treningi () VALUES (NULL, '$exeName', '$date', '$opis', '$diff', (SELECT id FROM kraji_treningov WHERE ime='$place'), '$userID')"; 
+                $sql = "UPDATE treningi SET ime_treninga = '$exeName', 
+                                            datum = '$date', 
+                                            opis = '$opis', 
+                                            tezavnost = '$diff', 
+                                            kraj_treninga_id = (SELECT id FROM kraji_treningov WHERE ime='$place'), 
+                                            users_id = '$userID' 
+                        WHERE id = $treningID";
                 
-                mysqli_query($link, $sql2);
+                mysqli_query($link, $sql);
 
                 if ($_SESSION['admin']==1) {
                     header("Location:exercises_admin.php");
@@ -56,7 +63,10 @@
                     header("Location:exercises.php");
                 }
             }
+            else
+            {
+                
+            }
         }
     ?>
-    <?php include_once('footer.php'); ?>
 </body>

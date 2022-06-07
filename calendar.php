@@ -1,4 +1,8 @@
 <?php
+    session_start();
+?>
+
+<?php
 class Calendar {  
 
     /**
@@ -119,16 +123,67 @@ class Calendar {
  
             $cellContent=null;
         }
-             
+        
+
+        
         if($this->currentDate==null)
         {
             return '<spam><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
                 ($cellContent==null?'mask':'').'">'.$cellContent.'</li></spam>';
         }
+        else if(isset($_SESSION['id']) && $_SESSION['admin']==0)
+        {
+            require 'povezava.php'; 
+            $date = $this->currentDate." 00:00:00";
+            $sql="SELECT * FROM treningi WHERE users_id=".$_SESSION['id']." AND datum='".$date."';";
+
+            $result=mysqli_query($link, $sql);
+
+            $kolk=mysqli_num_rows($result);
+
+            $row=mysqli_fetch_array($result);
+            
+            if($kolk==1)
+            {
+                $exeName=$row['ime_treninga'];
+                return '<spam id="hover"><a href="exercise_about.php?msg='.$this->currentDate.'"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+                        ($cellContent==null?'mask':'').'"><spam id="cellC">'.$cellContent.'</spam><br><spam id="exe" style="color:lime;">'.$exeName.'</spam></li></a></spam>';
+            }
+            else
+            {
+                return '<spam id="hover"><a href="exercise_input.php?msg='.$this->currentDate.'"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+                ($cellContent==null?'mask':'').'"><spam id="cellC">'.$cellContent.'</spam><br><spam>'.'</spam></li></a></spam>';
+            }
+        }
+        else if ($_SESSION['admin']==1) 
+        {
+            require 'povezava.php'; 
+
+            $date = $this->currentDate." 00:00:00";
+            $sql="SELECT * FROM treningi WHERE users_id=".$_SESSION['userID']." AND datum='".$date."';";
+
+            $result=mysqli_query($link, $sql);
+
+            $kolk=mysqli_num_rows($result);
+
+            $row=mysqli_fetch_array($result);
+            
+            if($kolk==1)
+            {
+                $exeName=$row['ime_treninga'];
+                return '<spam id="hover"><a href="exercise_about.php?msg='.$this->currentDate.'"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+                        ($cellContent==null?'mask':'').'"><spam id="cellC">'.$cellContent.'</spam><br><spam id="exe" style="color:lime;">'.$exeName.'</spam></li></a></spam>';
+            }
+            else
+            {
+                return '<spam id="hover"><a href="exercise_input.php?msg='.$this->currentDate.'"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+                ($cellContent==null?'mask':'').'"><spam id="cellC">'.$cellContent.'</spam><br><spam>'.'</spam></li></a></spam>';
+            }
+        }
         else
         {
-            return '<spam id="hover"><a href="exercise_input.php?msg='.$this->currentDate.'"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
-                ($cellContent==null?'mask':'').'">'.$cellContent.'</li></a></spam>';
+            return '<spam id="hover"><li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' ')).
+                ($cellContent==null?'mask':'').'"><spam id="cellC">'.$cellContent.'</spam><br><spam>'.'</spam></li></spam>';
         }
     }
      

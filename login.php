@@ -18,4 +18,5 @@
         <div><a id="registerbtn" href="register.php">Register</a></div>
         <div id="cancelLoginDiv"><a id="cancelLogin" href="index.php">Cancel Login</a></div>
     </div>
+    <?php include_once('footer.php'); ?>
 </body>
