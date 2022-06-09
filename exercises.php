@@ -33,7 +33,7 @@
                 echo "<h1>CHOOSE USER</h1>
                 <div id='redline'></div>
                 <div id=loginBox>
-                    <form id='formLogin' action='chooseUser.php' method='get'>
+                    <form id='formLogin' action='chooseUser.php?msg=0' method='get'>
                         <div id='label'>Who's table do you want to see?</div>
                         <div id='chooseUser'><select name='userID' required>";
                             for ($i=0; $i < $count; $i++) 
@@ -61,9 +61,10 @@
                                 }
                             }
                         echo "</select></div>
+                        <input type='text' name='msg' value='0' hidden>
                         <div><input id='resetbtn' type='reset' value='Reset'><input id='loginbtn' type='submit' name='sub' value='Choose'></div>
                     </form>
-                    
+                    <div id='deleteUserDiv'><a id='deleteUser' href='chooseUser.php?msg=1'>Delete user</a></div>
                     <div id='cancelLoginDiv'><a id='cancelLogin' href='index.php'>Cancel</a></div>
                 </div>";
             }

@@ -128,3 +128,28 @@ select{
 #cancelLoginDiv{
     margin-top: 30px;
 }
+
+
+#deleteUser{
+    background-color: #e70404;
+    color: #000000;
+    padding: 6px 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+#deleteUser:hover{
+    background-color: #ff5050;
+}
+
+#deleteUserDiv{
+    margin-top: 30px;
+}
+
+#belong{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}

@@ -24,8 +24,7 @@
 
             $result=mysqli_query($link, $sql1);
 
-            $kolk=mysqli_num_rows($result); 
-
+            $kolk=mysqli_num_rows($result);  
             
             if($kolk==1)
             {

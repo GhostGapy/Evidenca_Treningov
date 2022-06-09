@@ -7,6 +7,7 @@
     </head>
     <body>
     <?php  
+
         require_once 'povezava.php'; 
         
         echo $_GET['userID'];
@@ -24,11 +25,17 @@
             $_SESSION['userID']=$row['id'];
             $_SESSION['chosenName']=$row['name'];
             $_SESSION['chosenSurname']=$row['surname'];   
-            
-            header("Location:exercises_admin.php");
         }
 
-        
+        if($_GET['msg']==1)
+            {
+                header("Location:delete_user.php?userID=".$_SESSION['userID']."");
+            }
+            else
+            {
+                header("Location:exercises_admin.php");
+            }
+
     ?>
     </body>
 </html> 

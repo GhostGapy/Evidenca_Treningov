@@ -48,8 +48,6 @@
                 <div>
                     <textarea id="opis" name="opis" rows="5" cols="33"></textarea>
                 </div>
-                <div id="datetext">Upload and image</div>
-                <div></div>
                 <div><input id="resetbtn" type="reset" value="Reset"><input id="savebtn" type="submit" name="sub" value="Save"></div>
             </form>
             <?php
